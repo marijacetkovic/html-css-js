@@ -1,0 +1,25 @@
+.firstrow{
+	font-size: 2em;
+	float: left;
+	text-align: center;
+	height: 24.5%;
+	width: 24.5%;
+	background-color: darkred;
+	border: 1px solid black;
+	border-radius: 6em;
+	color: white;
+}
+
+.firstrow p{
+	margin-top:;
+}
+
+
+
+
+.main{
+	height: 35em;
+	width: 35em;
+	background-color: yellowgreen;
+	border: 1px solid black;
+}

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Task 07</title>
+
+	<style>
+
+
+		.box{
+			position: relative;
+			width:9.5vw;
+			height:9.5vw;
+			border: 1px solid black;
+			float: left;
+			margin-bottom:1.5vw;
+		}
+
+
+
+		.circle{
+			width:9.3vw;
+			height:9.3vw;
+			background-color:red ;
+			border: 1px solid black;
+			border-radius: 50%;
+			margin:auto;
+		}
+
+		.buttons{
+			clear:both;
+		}
+
+		.buttons button{
+			margin:0.4vw;
+			font-size: 1.3em;	
+		}
+
+
+	</style>
+	<script type="text/javascript">
+		
+	</script>
+
+
+</head>
+<body>
+
+	<div class='box' id='0' onclick="putcircle(0)">
+		<div class='circle'></div>
+	</div>
+
+	
+	<script type="text/javascript">
+
+		var lastID = 0;
+		
+		for (var i = 1; i < 30; i++) {
+			document.write(`<div class='box' id="${i}" onclick="putcircle(${i});"></div>`)
+		}
+		function putcircle(box_id){
+			document.getElementById(lastID.toString()).innerHTML = "";
+			document.getElementById(box_id.toString()).innerHTML = "<div class='circle'></div>";
+			lastID = box_id;
+		}
+
+		function moveForward(){
+			if (lastID == 29) {
+				return;
+			}
+			
+			document.getElementById(lastID.toString()).innerHTML = "";
+			lastID++;
+			document.getElementById(lastID.toString()).innerHTML = "<div class='circle'></div>";
+		}
+
+		function moveBackward(){
+			if (lastID == 0) {
+				return;
+			}
+			
+			document.getElementById(lastID.toString()).innerHTML = "";
+			lastID--;
+			document.getElementById(lastID.toString()).innerHTML = "<div class='circle'></div>";
+		}
+
+		function moveUp(){
+			if ((lastID -10) < 0) {
+				return;
+			}
+			
+			document.getElementById(lastID.toString()).innerHTML = "";
+			lastID -= 10;
+			document.getElementById(lastID.toString()).innerHTML = "<div class='circle'></div>";
+		}
+
+		function moveDown(){
+			if ((lastID + 10) > 29) {
+				return;
+			}
+			
+			document.getElementById(lastID.toString()).innerHTML = "";
+			lastID += 10;
+			document.getElementById(lastID.toString()).innerHTML = "<div class='circle'></div>";
+		}
+
+
+	</script>
+
+
+
+
+
+	<div class="buttons">
+		<button onclick="moveForward()">Forward</button>
+		<button onclick="moveBackward()">Backward</button>
+		<button onclick="moveDown()">Down</button>
+		<button onclick="moveUp()">Up</button>
+
+	</div>
+
+	<h1>You can also move the circle by clicking on a box!</h1>
+
+</body>
+</html>

@@ -1,0 +1,86 @@
+/*relative lengths
+em - relative to font
+
+vw - relative to viewport
+*/
+
+@keyframes animation {
+  from   {opacity: 0%;}
+  to 	{opacity: 100%;}
+}
+
+.maindiv{
+  width: 100%;
+  background-color: black;
+
+}
+.ul1{
+	margin: 0px;
+	padding: 0px;
+	text-align: right;
+	list-style-type: none;
+	color: white;
+}
+
+.ul1 a{
+
+	color: white;
+	text-decoration: none;
+}
+body{
+	animation-name: animation;
+  animation-duration: 2s;
+	font-family: Arial, sans-serif;
+}
+li{
+	font-family: Verdana, sans-serif;
+	font-size: 13px;
+	display: inline;
+	margin-right: 60px;
+	text-align: left;
+	}
+
+.dropdown{
+	display: none;
+	position: absolute;
+	margin-left: 80%;
+	color: black;
+}
+
+.more:hover .dropdown{
+	display: block;
+	
+}
+
+#table{
+	height: 100px;
+	width: 200px;
+	margin-top: 10px;
+	box-shadow: 2px 5px 20px gray;
+}
+.more{
+	background-color: blue;
+}
+
+.more td{
+	border: 1px solid white;
+}
+
+td:hover{
+	border: 1px solid black;
+	box-shadow: 2px 2px 2px purple;
+
+}
+
+#li5{
+	font-weight: bold;
+	background-color: red;
+	margin: 0;
+	margin-left: 50px;
+}
+h1{
+	font-style: italic;
+	color: blue;
+	font-size: 50px;
+	text-shadow: 0px 12px yellowgreen, 0px 19px red;
+}

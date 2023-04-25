@@ -1,0 +1,42 @@
+.container{
+	position: relative;
+	height: 40em;
+	width: 40em;
+	bottom: 3em;
+	left: 20%;
+}
+
+.ball{
+	float: left;
+	position: absolute;
+	bottom: 2em;
+	background-color: blue;
+	height: 2em;
+	width: 2em;
+	border-radius: 5em;
+	animation: animacija 5s ease-in-out infinite;
+}
+
+
+
+#ball2{
+	left: 40%;
+	animation-delay: 1s;
+}
+
+#ball3{
+	left: 80%;
+	animation-delay: 2s;
+}
+
+@keyframes animacija{
+	from {
+		bottom: 2em;
+		opacity: 1;
+	}
+	to {
+		bottom: 32em;
+		opacity: 0;
+	}
+}
+
