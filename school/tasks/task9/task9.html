@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Task 9</title>
+	<link rel="stylesheet" type="text/css" href="task9.css">
+</head>
+<body>
+
+	<div class="container">
+		<div id="drop1" class="innercontainer" ondragover="dragOver();" ondrop="dragDrop();">
+			<div class="label label1">To Do</div>
+			<div id="todo1" draggable="true" class="todo" ondragstart="startDrag();">#1</div>
+			<div id="todo2" draggable="true" class="todo" ondragstart="startDrag();">#2</div>
+			<div id="todo3" draggable="true" class="todo" ondragstart="startDrag();">#3</div>
+		</div>
+		<div id="drop2" class="innercontainer" ondragover="dragOver();" ondrop="dragDrop();">
+			<div class="label label2">In progress</div>	
+			<div id="todo4" draggable="true" class="todo" ondragstart="startDrag();">#4</div>
+			<div id="todo5" draggable="true" class="todo" ondragstart="startDrag();">#5</div>
+
+		</div>
+		<div id="drop3" class="innercontainer" ondragover="dragOver();" ondrop="dragDrop();">
+			<div class="label label3">Done</div>		
+		</div>
+	</div>
+
+
+	<script type="text/javascript">
+
+		function startDrag() {
+			//transfer id of element that ur dragging
+			event.dataTransfer.setData("startDragElID", event.target.id);
+		}
+		function dragOver(){
+			//prevent dragging back to itself
+			event.preventDefault();
+		}
+		function dragDrop(){
+			event.preventDefault();
+			//only drop on innercontainers
+			if (event.target.classList.contains("innercontainer")) {
+				
+			var elementID = event.dataTransfer.getData("startDragElID");
+			var draggedElement = document.getElementById(elementID);
+			var dropTargetID = event.target.id;
+			var dropTarget = document.getElementById(dropTargetID);
+			dropTarget.appendChild(draggedElement);
+			//labels are first children of innercontainers
+			var label = event.target.firstElementChild.classList;
+
+			//change colors depending on the label
+			if (label.contains("label1")) {
+				draggedElement.style.backgroundColor = "dimgray";
+			}
+			else if(label.contains("label2")){
+				//color code of css 'orange' into rgb into rgba for opacity
+				draggedElement.style.backgroundColor = "rgba(255, 165, 0,0.35)";
+			}
+			else {
+				draggedElement.style.backgroundColor = "rgba(0,128,0,0.35)";
+			}
+		}
+
+		}
+	</script>
+
+</body>
+</html>

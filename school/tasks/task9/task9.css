@@ -1,0 +1,53 @@
+.body{
+	font-family: "Times New Roman";
+}
+.container{
+  display: flex; 
+  position: relative;
+  width: 60vw;
+  height: 30vw;
+  left: 10%;
+}
+
+.innercontainer{
+  height: 100%; 
+  width: 22%;
+  background-color: darkgray;
+  margin-right: 1vw;
+}
+.label{
+	position: relative;
+	left: 2vw;
+	width: 70%;
+	height: 7%;
+	text-align: center;
+	color: white;
+	font-size: 1.1vw;
+	padding-top: 0.4vw;
+	box-sizing: border-box;
+}
+
+.label1{
+	background-color: black;
+}
+
+.label2{
+	background-color: orange;
+}
+.label3{
+	background-color: green;
+}
+
+
+.todo{
+	position: relative;
+	left:2.5vw;
+	height: 15%;
+	width: 60%;
+	background-color: dimgray;
+	box-sizing: border-box;
+	border: 0.15vw dashed white;
+	text-align: center;
+	color: white;
+	font-size: 1.1vw;
+}

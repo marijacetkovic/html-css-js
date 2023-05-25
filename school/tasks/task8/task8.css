@@ -1,0 +1,49 @@
+h1{
+	color: red;
+	font-size: 7.5vw;
+	position: relative;
+	left: 7.85vw;
+	top: 5vw;
+}
+
+.container{
+	position: relative;
+	top: -10vw;
+	left: 44vw;
+
+}
+
+.button{
+	display: inline-block;
+	height: 3vw;
+	width: 6vw;
+	background-color: black;
+	border-radius: 10%;
+	box-shadow: 0.2vw 0.2vw gray;
+	color: white;
+	text-align: center;
+	margin-right: 0.2vw;
+	box-sizing: border-box;
+	padding-top: 0.95vw;
+	font-size: 1.1vw;
+}
+
+.numbercontainer{
+	margin-top: 1.4vw;
+	position: relative;
+	left: 7.2vw;
+}
+
+.numberlist, .odd{
+	border: 0.15vw solid black;
+	height: 1.5vw;
+	width: 4.5vw;
+	text-align: center;
+	font-size:1.1vw;
+}
+
+.even{
+	background-color: orange;
+	border: 0.15vw dotted black;
+	color: white;
+}

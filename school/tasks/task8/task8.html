@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Task 8</title>
+	<link rel="stylesheet" type="text/css" href="task8.css">
+</head>
+<body>
+
+	<div class="container">
+		<h1 id="timerlabel">0</h1>
+
+		<div id="start" class="start button" onclick="startTimer();">Start</div>
+		<div id="stop" class="stop button" onclick="stopTimer();">Stop</div>
+		<div id="reset" class="reset button" onclick="resetTimer();">Reset</div>
+
+		<div id="numbers" class="numbercontainer">
+			<div id="numberlabel" class="numberlist">Numbers</div>
+		</div>
+
+	</div>
+	<script type="text/javascript">
+		var startButton = document.getElementById("start");
+		var stopButton = document.getElementById("stop");
+		var resetButton = document.getElementById("reset");
+		var timerLabel = document.getElementById("timerlabel");
+		var numberContainer = document.getElementById("numbers");
+		var numberLabel = document.getElementById("numberlabel");
+		var timer = 0;
+		var timerInterval = null;
+		var timerStarted = false;
+
+
+		function changeTimerLabel(){
+			timer++;
+			timerLabel.innerHTML = timer;
+			if (timer>9) {
+				timerLabel.style.left = "6.1vw";
+			}
+			var element = document.createElement("div");
+			element.innerHTML = timer;
+  			element.classList.add("numberlist");
+			if (timer%2==0) {
+  			element.classList.add("even");
+			}
+			numberContainer.appendChild(element);
+			
+		}
+
+		function startTimer(){
+			if (timerStarted==true) {
+				return;
+			}
+			timerInterval = setInterval(changeTimerLabel,1000);
+			timerStarted = true;
+		}
+
+		function stopTimer(){
+			clearInterval(timerInterval);
+			timerStarted = false;
+		}
+
+		function resetTimer(){
+			clearInterval(timerInterval);
+			while (numberContainer.lastElementChild) {
+			numberContainer.removeChild(numberContainer.lastElementChild);
+			}
+			numberContainer.appendChild(numberLabel);
+			timer = 0 ;
+			timerLabel.innerHTML = timer;
+			timerLabel.style.left = "7.85vw";
+			timerStarted = false;
+		}
+	</script>
+</body>
+</html>
